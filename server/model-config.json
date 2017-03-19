@@ -35,7 +35,11 @@
     "dataSource": "db",
     "public": false
   },
-  "game": {
+  "Game": {
+    "dataSource": "mongolod",
+    "public": true
+  },
+  "Space": {
     "dataSource": "mongolod",
     "public": true
   }

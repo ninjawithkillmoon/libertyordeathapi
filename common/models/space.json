@@ -1,0 +1,108 @@
+{
+  "name": "Space",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "population": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "blockades": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "propaganda": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "raids": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "britishForts": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "britishRegulars": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "britishTories": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "patriotForts": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "patriotCotinentals": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "patriotMilitiaActive": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "patriotMilitiaUnderground": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "frenchRegulars": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "indianVillages": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "indianWarPartiesActive": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "indianWarPartiesUnderground": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "supportLevel": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "game": {
+      "type": "belongsTo",
+      "model": "Game",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
