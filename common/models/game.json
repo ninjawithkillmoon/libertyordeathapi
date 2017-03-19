@@ -1,0 +1,69 @@
+{
+  "name": "game",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "BritishResources": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "PatriotResources": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "IndianResources": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "FrenchResources": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "CumulativeBritishCasualties": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "CumulativeRebellionCasualties": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "BritishBrilliantStrokeAvailable": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "PatriotBrilliantStrokeAvailable": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "IndianBrilliantStrokeAvailable": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "FrenchBrilliantStrokeAvailable": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "FrenchTreatyOfAllianceAvailable": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
