@@ -63,7 +63,42 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "spaces": {
+      "type": "hasMany",
+      "model": "Space",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "newGame": {
+      "accepts": [
+        {
+          "arg": "year",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "game",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/newGame",
+          "verb": "post"
+        }
+      ]
+    }
+  }
 }
