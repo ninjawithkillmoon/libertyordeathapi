@@ -18,71 +18,50 @@ module.exports = function(Game) {
 		  "FrenchBrilliantStrokeAvailable": true,
 		  "FrenchTreatyOfAllianceAvailable": true
 		}, function(err, obj) {
-			app.models.Space.create({
-			  "name": "Quebec City",
-			  "type": "city",
-			  "population": 1,
-			  "blockades": 0,
-			  "propaganda": 0,
-			  "raids": 0,
-			  "britishForts": 0,
-			  "britishRegulars": 0,
-			  "britishTories": 0,
-			  "patriotForts": 0,
-			  "patriotCotinentals": 0,
-			  "patriotMilitiaActive": 0,
-			  "patriotMilitiaUnderground": 0,
-			  "frenchRegulars": 0,
-			  "indianVillages": 0,
-			  "indianWarPartiesActive": 0,
-			  "indianWarPartiesUnderground": 0,
-			  "supportLevel": 0,
-			  "gameId": obj.id
-			});
 
-			app.models.Space.create({
-			  "name": "New York City",
-			  "type": "city",
-			  "population": 2,
-			  "blockades": 0,
-			  "propaganda": 0,
-			  "raids": 0,
-			  "britishForts": 0,
-			  "britishRegulars": 0,
-			  "britishTories": 0,
-			  "patriotForts": 0,
-			  "patriotCotinentals": 0,
-			  "patriotMilitiaActive": 0,
-			  "patriotMilitiaUnderground": 0,
-			  "frenchRegulars": 0,
-			  "indianVillages": 0,
-			  "indianWarPartiesActive": 0,
-			  "indianWarPartiesUnderground": 0,
-			  "supportLevel": 0,
-			  "gameId": obj.id
-			});
+			let spaceData = [
+				{name: "Quebec City", pop: 1, type: "city"},
+				{name: "New York City", pop: 2, type: "city"},
+				{name: "Philadelphia", pop: 1, type: "city"},
+				{name: "Norfolk", pop: 1, type: "city"},
+				{name: "Charles Town", pop: 1, type: "city"},
+				{name: "Savannah", pop: 1, type: "city"},
+				{name: "Boston", pop: 1, type: "city"},
 
-			app.models.Space.create({
-			  "name": "Philadelphia",
-			  "type": "city",
-			  "population": 1,
-			  "blockades": 0,
-			  "propaganda": 0,
-			  "raids": 0,
-			  "britishForts": 0,
-			  "britishRegulars": 0,
-			  "britishTories": 0,
-			  "patriotForts": 0,
-			  "patriotCotinentals": 0,
-			  "patriotMilitiaActive": 0,
-			  "patriotMilitiaUnderground": 0,
-			  "frenchRegulars": 0,
-			  "indianVillages": 0,
-			  "indianWarPartiesActive": 0,
-			  "indianWarPartiesUnderground": 0,
-			  "supportLevel": 0,
-			  "gameId": obj.id
-			});
+				{name: "Quebec", pop: 0, type: "indianReserve"},
+				{name: "Northwest", pop: 0, type: "indianReserve"},
+				{name: "Southwest", pop: 0, type: "indianReserve"},
+				{name: "Florida", pop: 0, type: "indianReserve"},
+
+				{name: "New York", pop: 2, type: "colony"},
+				{name: "New Hampshire", pop: 1, type: "colony"},
+				{name: "Connecticut - Rhode Island", pop: 2, type: "colony"},
+				{name: "New Jersey", pop: 1, type: "colony"},
+				{name: "Maryland - Delaware", pop: 2, type: "colony"},
+				{name: "Pennsylvania", pop: 2, type: "colony"},
+				{name: "Virginia", pop: 2, type: "colony"},
+				{name: "North Carolina", pop: 2, type: "colony"},
+				{name: "South Carolina", pop: 2, type: "colony"},
+				{name: "Georgia", pop: 1, type: "colony"},
+				{name: "Massachusetts", pop: 2, type: "colony"},
+
+				{name: "West Indies", pop: 0, type: "holdingBox"},
+
+				{name: "Available", pop: 0, type: "special"},
+				{name: "Unavailable", pop: 0, type: "special"},
+				{name: "Casualties", pop: 0, type: "special"}
+			];
+
+			for (let i = 0; i<spaceData.length; i++) {
+				let spaceDatum = spaceData[i];
+
+				app.models.Space.create({
+				  "name": spaceDatum.name,
+				  "type": spaceDatum.type,
+				  "population": spaceDatum.pop,
+				  "gameId": obj.id
+				});
+			}
 
 			Game.findById(obj.id, {"include": "spaces"}, function(err, obj) {
 				callback(null, obj);
